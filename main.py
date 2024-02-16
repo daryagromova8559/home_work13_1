@@ -3,7 +3,7 @@ class Category:
 
     name: str
     specification: str
-    product: list
+    goods: list
     numbers_of_category = 0
     numbers_of_goods = 0
 
@@ -13,7 +13,7 @@ class Category:
         self.goods = goods
 
         Category.numbers_of_category += 1
-        Category.numbers_of_goods += 1
+        Category.numbers_of_goods = len(goods)
 
 
 class Product:
