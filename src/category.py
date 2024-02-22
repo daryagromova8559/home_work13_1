@@ -10,7 +10,11 @@ class Category:
     def __init__(self, name, specification, goods):
         self.name = name
         self.specification = specification
-        self.goods = goods
+        self.__goods = goods
 
         Category.numbers_of_category += 1
         Category.numbers_of_goods = len(goods)
+
+    @property
+    def goods(self):
+        return self.__goods
