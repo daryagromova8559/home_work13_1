@@ -9,5 +9,20 @@ class Product:
     def __init__(self, name, specification, price, amount):
         self.name = name
         self.specification = specification
-        self.price = price
+        self.__price = price
         self.amount = amount
+
+    @classmethod
+    def new_product(cls, name, specification, price, amount):
+        return cls(name, specification, price, amount)
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, value):
+        if value <= 0:
+            print('Некорректная цена')
+            return
+        self.__price = value
