@@ -1,3 +1,6 @@
+from src.product import Product
+
+
 class Category:
     """Класс для представления категории продукта"""
 
@@ -17,4 +20,9 @@ class Category:
 
     @property
     def goods(self):
+        return self.__goods
+
+    def add_goods(self, name, specification, price, amount):
+        new_product = Product(name, specification, price, amount)
+        self.__goods.append(new_product)
         return self.__goods
