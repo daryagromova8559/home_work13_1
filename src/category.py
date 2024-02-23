@@ -6,23 +6,32 @@ class Category:
 
     name: str
     specification: str
-    goods: list
+    products: list
     numbers_of_category = 0
     numbers_of_goods = 0
 
-    def __init__(self, name, specification, goods):
+    def __init__(self, name, specification, products):
         self.name = name
         self.specification = specification
-        self.__goods = goods
+        self.__products = products
 
         Category.numbers_of_category += 1
-        Category.numbers_of_goods = len(goods)
+        Category.numbers_of_products = len(products)
 
     @property
-    def goods(self):
-        return self.__goods
+    def products(self):
+        return self.__products
 
-    def add_goods(self, name, specification, price, amount):
+    def add_products(self, name, specification, price, amount):
         new_product = Product(name, specification, price, amount)
-        self.__goods.append(new_product)
-        return self.__goods
+        self.__products.append(new_product)
+        return self.__products
+
+
+    @property
+    def products_display(self):
+        result = ''
+        for product in self.__products:
+            result += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
+        return result
+

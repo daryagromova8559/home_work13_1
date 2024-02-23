@@ -13,9 +13,9 @@ def category_women_clothes():
 def test_init_(category_women_clothes):
     assert category_women_clothes.name == 'Женская одежда'
     assert category_women_clothes.specification == 'Женская одежда на каждый день'
-    assert category_women_clothes.goods == ["платье", "джинсы", "юбка"]
+    assert category_women_clothes.products == ["платье", "джинсы", "юбка"]
     assert category_women_clothes.numbers_of_category == 1
-    assert category_women_clothes.numbers_of_goods == 3
+    assert category_women_clothes.numbers_of_products == 3
 
 
 @pytest.fixture
