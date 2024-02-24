@@ -8,7 +8,7 @@ class Category:
     specification: str
     products: list
     numbers_of_category = 0
-    numbers_of_goods = 0
+    numbers_of_products = 0
 
     def __init__(self, name, specification, products):
         self.name = name
@@ -25,6 +25,7 @@ class Category:
     def add_products(self, name, specification, price, amount):
         new_product = Product(name, specification, price, amount)
         self.__products.append(new_product)
+        Category.numbers_of_products += 1
         return self.__products
 
 
