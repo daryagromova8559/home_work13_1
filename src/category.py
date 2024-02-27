@@ -1,5 +1,3 @@
-
-
 class Category:
     """Класс для представления категории продукта"""
 
@@ -32,3 +30,12 @@ class Category:
         for product in self.__products:
             result += f'{product.name}, {product.price} руб. Остаток: {product.amount} шт.\n'
         return result
+
+    def __str__(self):
+        return f'Название категории {self.name}, количество продуктов: {self.__len__()} шт.'
+
+    def __len__(self):
+        sum_product = 0
+        for i in self.__products:
+            sum_product += i.amount
+        return sum_product
