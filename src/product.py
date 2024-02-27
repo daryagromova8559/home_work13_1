@@ -26,3 +26,12 @@ class Product:
             print('Некорректная цена')
             return
         self.__price = value
+
+    def __str__(self):
+        return f'{self.name}, {self.price} руб. Остаток: {self.__len__()} шт.'
+
+    def __add__(self, other):
+        return self.price * self.amount + other.price * other.amount
+
+    def __len__(self):
+        return self.amount
