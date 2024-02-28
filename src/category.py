@@ -32,7 +32,7 @@ class Category:
         return result
 
     def __str__(self):
-        return f'Название категории {self.name}, количество продуктов: {self.__len__()} шт.'
+        return f'Название категории {self.name}, количество продуктов: {len(self)} шт.'
 
     def __len__(self):
         sum_product = 0
