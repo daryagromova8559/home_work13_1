@@ -6,15 +6,16 @@ class Product:
     price: float
     amount: int
 
-    def __init__(self, name, specification, price, amount):
+    def __init__(self, name, specification, price, amount, color):
         self.name = name
         self.specification = specification
         self.__price = price
         self.amount = amount
+        self.color = color
 
     @classmethod
-    def new_product(cls, name, specification, price, amount):
-        return cls(name, specification, price, amount)
+    def new_product(cls, name, specification, price, amount, color):
+        return cls(name, specification, price, amount, color)
 
     @property
     def price(self):
@@ -35,3 +36,22 @@ class Product:
 
     def __len__(self):
         return self.amount
+
+
+class Smartphone(Product):
+    """Класс для представления смартфона"""
+
+    def __init__(self, name, specification, price, amount, color, performance, model, memory):
+        super().__init__(name, specification, price, amount, color)
+        self.perfomance = performance
+        self.model = model
+        self.memory = memory
+
+
+class LawnGrass(Product):
+    """Класс для представления травы газонной"""
+
+    def __init__(self, name, specification, price, amount, color, country, germination):
+        super().__init__(name, specification, price, amount, color)
+        self.country = country
+        self.germination = germination
