@@ -5,6 +5,7 @@ class Product:
     specification: str
     price: float
     amount: int
+    color: str
 
     def __init__(self, name, specification, price, amount, color):
         self.name = name

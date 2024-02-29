@@ -1,3 +1,5 @@
+from src.product import Product
+
 class Category:
     """Класс для представления категории продукта"""
 
@@ -20,9 +22,15 @@ class Category:
         return self.__products
 
     def add_products(self, new_product):
-        self.__products.append(new_product)
-        Category.numbers_of_products += 1
-        return self.__products
+        """Добавление нового продукта"""
+        if not isinstance(new_product, Product):
+            raise TypeError('Добавлять можно только объекты Product или его наследников')
+        elif not issubclass(type(new_product), Product):
+            raise TypeError('Добавлять можно только объекты Product или его наследников')
+        else:
+            self.__products.append(new_product)
+            Category.numbers_of_products += 1
+            return self.__products
 
     @property
     def products_display(self):
