@@ -41,14 +41,7 @@ class Product:
         return self.amount
 
 
-class Smartphone(Product):
-    """Класс для представления смартфона"""
 
-    def __init__(self, name, specification, price, amount, color, performance, model, memory):
-        super().__init__(name, specification, price, amount, color)
-        self.perfomance = performance
-        self.model = model
-        self.memory = memory
 
 
 class LawnGrass(Product):
