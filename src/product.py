@@ -32,7 +32,10 @@ class Product:
         return f'{self.name}, {self.price} руб. Остаток: {len(self)} шт.'
 
     def __add__(self, other):
-        return self.price * self.amount + other.price * other.amount
+        if isinstance(other, type(self)):
+            return self.price * self.amount + other.price * other.amount
+        else:
+            raise TypeError
 
     def __len__(self):
         return self.amount
