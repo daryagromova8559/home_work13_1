@@ -1,7 +1,8 @@
+from src.mixin import MixinLog
 from src.abs_class import AbsClass
 
 
-class Product(AbsClass):
+class Product(AbsClass, MixinLog):
     """Класс для представления продукта"""
 
     name: str

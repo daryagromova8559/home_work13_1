@@ -1,6 +1,7 @@
+from src.mixin import MixinLog
 from src.product import Product
 
-class LawnGrass(Product):
+class LawnGrass(Product, MixinLog):
     """Класс для представления травы газонной"""
 
     def __init__(self, name, specification, price, amount, color, country, germination):
