@@ -1,4 +1,7 @@
-class Product:
+from src.abs_class import AbsClass
+
+
+class Product(AbsClass):
     """Класс для представления продукта"""
 
     name: str
