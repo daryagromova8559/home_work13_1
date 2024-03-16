@@ -12,6 +12,7 @@ class Product(AbsClass, MixinLog):
     color: str
 
     def __init__(self, name, specification, price, amount, color):
+        super().__init__()
         self.name = name
         self.specification = specification
         self.__price = price
