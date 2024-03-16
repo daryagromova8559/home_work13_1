@@ -20,7 +20,10 @@ class Product(AbsClass, MixinLog):
 
     @classmethod
     def new_product(cls, name, specification, price, amount, color):
-        return cls(name, specification, price, amount, color)
+        if amount <= 0:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
+        else:
+            return cls(name, specification, price, amount, color)
 
     @property
     def price(self):
