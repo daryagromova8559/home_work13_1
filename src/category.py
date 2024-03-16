@@ -1,5 +1,6 @@
 from src.product import Product
 
+
 class Category:
     """Класс для представления категории продукта"""
 
@@ -47,3 +48,15 @@ class Category:
         for i in self.__products:
             sum_product += i.amount
         return sum_product
+
+    def average_price(self):
+        """Подсчет средней цены продуктов"""
+        total_price = []
+        average_price = []
+        try:
+            for i in self.__products:
+                total_price.append(i.price * i.amount)
+                average_price = round(sum(total_price) / len(self), 2)
+        except ZeroDivisionError:
+            average_price = 0
+        return average_price
