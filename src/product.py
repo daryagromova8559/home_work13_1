@@ -1,5 +1,5 @@
-from src.mixin import MixinLog
 from src.abs_class import AbsClass
+from src.mixin import MixinLog
 
 
 class Product(AbsClass, MixinLog):
@@ -47,9 +47,3 @@ class Product(AbsClass, MixinLog):
 
     def __len__(self):
         return self.amount
-
-
-
-
-
-
